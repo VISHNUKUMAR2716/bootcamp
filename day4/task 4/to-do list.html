@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>to-do List</title>
+  </head>
+  <style>
+    h1{
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      font-size: 20px;
+      text-align: center;
+    }
+    #result li{
+      background-color: black;
+      color: white;
+      width: 100%;
+      padding: 10px;
+      margin: 10px;
+    }
+    button{
+      width: 100px;
+      height: 20px;
+   margin: 10px;
+    
+    }
+    input{
+      width: 300px;
+      height: 30px;
+    
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .deletebtn{
+      display: flex;
+      justify-content: end;
+      height: 20px;
+      color: red;
+    }
+  </style>
+  <body>
+    <h1>to-do list</h1>
+    <input
+      type="text"
+   
+      id="taskInput"
+      placeholder="enter the number"
+    />
+    <button onclick="addtask()">addtask</button>
+    <button onclick="remove()">removetask</button>
+    <ul id="result"></ul>
+    <script>
+      function addtask() {
+        let taskInput = document.getElementById("taskInput");
+        let tasktext = taskInput.value.trim();
+        if (tasktext === "") {
+          alert("please enter the values");
+          return;
+        }
+        let tasklist = document.getElementById("result");
+       
+        let li = document.createElement("li");
+        li.textContent = tasktext;
+        li.addEventListener("click", function () {
+          li.classList.toggle("completed");
+        });
+        let deletebtn = document.createElement("button");
+        deletebtn.textContent ="delete";
+        deletebtn.classList.add("delete-btn");
+        deletebtn.addEventListener("click", function () {
+          tasklist.removeChild(li);
+        });
+        li.appendChild(deletebtn);
+        tasklist.appendChild(li)
+        taskInput.value=""
+      }
+    </script>
+  </body>
+</html>

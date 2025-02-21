@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+           background-color: bisque;
+        }
+        .slider-container {
+            max-width: 500px;
+            margin: auto;
+            position: relative;
+        }
+        .slider {
+            display: none;
+            width: 100%;
+            border-radius: 10px;
+        }
+        .active {
+            display: block;
+        }
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .prev { left: 0; }
+        .next { right: 0; }
+    </style>
+</head>
+<body>
+    <div class="slider-container">
+        <img class="slider active" src="https://tse4.mm.bing.net/th?id=OIP.p9XQv2QwbVb2N7D0rfX6FwHaEK&pid=Api&P=0&h=180" alt="Image 1">
+        <img class="slider" src="https://tse1.mm.bing.net/th?id=OIP.YI7Eow9s0bCDbAkS_p-jjAHaEK&pid=Api&P=0&h=180" alt="Image 2">
+        <img class="slider" src="https://i.ytimg.com/vi/p8afUMIMmvM/maxresdefault.jpg" alt="Image 3">
+        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+    </div>
+    
+    <script>
+        let index = 0;
+        function changeSlide(step) {
+            let slides = document.getElementsByClassName("slider");
+            slides[index].classList.remove("active");
+            index = (index + step + slides.length) % slides.length;
+            slides[index].classList.add("active");
+        }
+    </script>
+</body>
+</html>

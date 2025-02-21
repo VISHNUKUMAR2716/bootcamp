@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Stopwatch</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
+
+      .timer {
+        font-size: 48px;
+        margin: 20px 0;
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 18px;
+        margin: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Simple Stopwatch</h1>
+    <div class="timer" id="display">00:00:00</div>
+    <button onclick="startTimer()">Start</button>
+    <button onclick="stopTimer()">Stop</button>
+    <button onclick="resetTimer()">Reset</button>
+
+    <script>
+      let timer;
+      let startTime;
+      let elapsedTime = 0;
+      let running = false;
+
+      function startTimer() {
+        if (!running) {
+          startTime = Date.now() - elapsedTime;
+          timer = setInterval(updateTime, 10);
+          running = true;
+        }
+      }
+
+      function stopTimer() {
+        clearInterval(timer);
+        running = false;
+      }
+
+      function resetTimer() {
+        clearInterval(timer);
+        running = false;
+        elapsedTime = 0;
+        document.getElementById("display").textContent = "00:00:00";
+      }
+
+      function updateTime() {
+        elapsedTime = Date.now() - startTime;
+        let minutes = Math.floor(elapsedTime / 60000);
+        let seconds = Math.floor((elapsedTime % 60000) / 1000);
+        let milliseconds = Math.floor((elapsedTime % 1000) / 10);
+
+        minutes = String(minutes).padStart(2, "0");
+        seconds = String(seconds).padStart(2, "0");
+        milliseconds = String(milliseconds).padStart(2, "0");
+
+        document.getElementById(
+          "display"
+        ).textContent = `${minutes}:${seconds}:${milliseconds}`;
+      }
+    </script>
+  </body>
+</html>

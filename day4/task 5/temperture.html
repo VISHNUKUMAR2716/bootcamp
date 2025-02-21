@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        .container {
+            max-width: 300px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        input, select, button {
+            width: auto;
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Temperature Converter</h2>
+        <input type="number" id="tempInput" placeholder="Enter temperature" />
+        <select id="unit">
+            <option value="celsius">Celsius</option>
+            <option value="fahrenheit">Fahrenheit</option>
+            <option value="kelvin">Kelvin</option>
+        </select>
+        <button onclick="convertTemp()">Convert</button>
+        <h3 id="result"></h3>
+    </div>
+    
+    <script>
+        function convertTemp() {
+            let temp = parseFloat(document.getElementById("tempInput").value);
+            let unit = document.getElementById("unit").value;
+            let result = "";
+            
+            if (isNaN(temp)) {
+                document.getElementById("result").innerText = "Please enter a valid number";
+                return;
+            }
+            
+            if (unit === "celsius") {
+                result = `Fahrenheit: ${(temp * 9/5 + 32).toFixed(2)}°F, Kelvin: ${(temp + 273.15).toFixed(2)}K`;
+            } else if (unit === "fahrenheit") {
+                result = `Celsius: ${((temp - 32) * 5/9).toFixed(2)}°C, Kelvin: ${((temp - 32) * 5/9 + 273.15).toFixed(2)}K`;
+            } else if (unit === "kelvin") {
+                result = `Celsius: ${(temp - 273.15).toFixed(2)}°C, Fahrenheit: ${((temp - 273.15) * 9/5 + 32).toFixed(2)}°F`;
+            }
+            
+            document.getElementById("result").innerText = result;
+        }
+    </script>
+</body>
+</html>

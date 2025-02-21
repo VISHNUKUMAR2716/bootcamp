@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>prodect page</title>
+    <style>
+      #navbar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border: 2px none;
+        width: 100%;
+        height: 50px;
+        box-shadow: 2px 3px 2px 3px;
+      }
+      #navbar li {
+        list-style: none;
+        padding: 0 20px;
+        position: relative;
+      }
+      #navbar li a {
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 600;
+        color: black;
+        transition: 0.3 ease;
+      }
+      #navbar li a:hover,
+      #navbar li a.active {
+        color: red;
+      }
+      #navbar li a.active::after,
+      #navbar li a:hover:after {
+        content: "";
+        width: 30%;
+        height: 2px;
+        background-color: red;
+        position: absolute;
+        bottom: -4px;
+        left: 20px;
+      }
+      #prodect {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 20px;
+      }
+      #prodect .one {
+        padding: 10px;
+        margin: 20px;
+        border: 2px none;
+        box-shadow: 2px 2px 2px 2px;
+      }
+      #prodect .one .list {
+        list-style: none;
+      }
+      #prodect .one button {
+        width: 100%;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        background-color: orange;
+      }
+      #prodect .one img {
+        width: 300px;
+      }
+      h1{
+        text-align: center;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="one">
+      <h1>shopping website</h1>
+      <ul id="navbar">
+        <li><a href="" class="active"></a>PRODUCT</li>
+        <li><a href=""></a>HOME</li>
+        <li><a href=""></a>ABOUT US</li>
+        <li><a href=""></a>COUNECT US</li>
+      </ul>
+    </div>
+    <div id="prodect">
+      <div class="one">
+        <img
+          src="https://tse1.mm.bing.net/th?id=OIP.TLX5sIQkHTumV4p5xyixKgHaGL&pid=Api&P=0&h=180"
+          alt="loq"
+        />
+        <h3>LoQ laptop</h3>
+        <h5>spfication</h5>
+        <ul class="list">
+          <li>proccer:AMD ryzen 5 7000</li>
+          <li>RAM:24gb ram DDR6</li>
+          <li>Gpu:GFOURCE RTX 3050</li>
+          <li>storage:512gb DDR5</li>
+          <li>Display:15.6 inches lcd</li>
+        </ul>
+        <button>buy now</button>
+      </div>
+
+      <div class="one">
+        <img
+          src="https://tse4.mm.bing.net/th?id=OIP.3BxYvaaRQHG5roN4TKY3MAHaF7&pid=Api&P=0&h=180"
+          alt="HP"
+        />
+        <h3>Hp laptop</h3>
+        <h5>spfication</h5>
+        <ul class="list">
+          <li>proccer:AMD ryzen 3 2000</li>
+          <li>RAM:4gb ram DDR3</li>
+          <li>Gpu:intel</li>
+          <li>storage:250gb DDR3</li>
+          <li>Display:15.6 inches lcd</li>
+        </ul>
+        <button>buy now</button>
+      </div>
+
+      <div class="one">
+        <img
+          src="http://www.informationq.com/wp-content/uploads/2013/11/Dell-Inspiron-15-3521-15.6-inch-Laptop-Black01.jpg"
+          alt="dell"
+        />
+        <h3>dell laptop</h3>
+        <h5>spfication</h5>
+        <ul class="list">
+          <li>proccer:AMD ryzen 5 7000</li>
+          <li>RAM:24gb ram DDR6</li>
+          <li>Gpu:GFOURCE RTX 3050</li>
+          <li>storage:512gb DDR5</li>
+          <li>Display:15.6 inches lcd</li>
+        </ul>
+        <button>buy now</button>
+      </div>
+
+      <div class="one">
+        <img
+          src="http://www.bwone.com/wp-content/uploads/2020/04/Acer-Aspire-5_A515-44-44G-front-view-Acer-logo.jpg"
+          alt="loq"
+        />
+        <h3>acer laptop</h3>
+        <h5>spfication</h5>
+        <ul class="list">
+          <li>proccer:AMD ryzen 5 7000</li>
+          <li>RAM:24gb ram DDR6</li>
+          <li>Gpu:GFOURCE RTX 3050</li>
+          <li>storage:512gb DDR5</li>
+          <li>Display:15.6 inches lcd</li>
+        </ul>
+        <button>buy now</button>
+      </div>
+
+      <div class="one">
+        <img
+          src="https://tse4.mm.bing.net/th?id=OIP.GwMEVQqqx8cr_7MPc4clEwHaHa&pid=Api&P=0&h=180"
+          alt="loq"
+        />
+        <h3>ause laptop</h3>
+        <h5>spfication</h5>
+        <ul class="list">
+          <li>proccer:AMD ryzen 5 7000</li>
+          <li>RAM:24gb ram DDR6</li>
+          <li>Gpu:GFOURCE RTX 3050</li>
+          <li>storage:512gb DDR5</li>
+          <li>Display:15.6 inches lcd</li>
+        </ul>
+        <button>buy now</button>
+      </div>
+
+      <div class="one">
+        <img
+          src="https://tse3.mm.bing.net/th?id=OIP.X00loWR6ID93rVdyZ9RCygHaHa&pid=Api&P=0&h=180"
+          alt="loq"
+        />
+        <h3>MSI laptop</h3>
+        <h5>spfication</h5>
+        <ul class="list">
+          <li>proccer:AMD ryzen 5 7000</li>
+          <li>RAM:24gb ram DDR6</li>
+          <li>Gpu:GFOURCE RTX 3050</li>
+          <li>storage:512gb DDR5</li>
+          <li>Display:15.6 inches lcd</li>
+        </ul>
+        <button>buy now</button>
+      </div>
+
+      <div class="one">
+        <img
+          src="https://tse2.mm.bing.net/th?id=OIP.5QTjq-tgIeiV7RnhZro37AHaEx&pid=Api&P=0&h=180"
+          alt="loq"
+        />
+        <h3>hp laptop</h3>
+        <h5>spfication</h5>
+        <ul class="list">
+          <li>proccer:AMD ryzen 5 7000</li>
+          <li>RAM:24gb ram DDR6</li>
+          <li>Gpu:GFOURCE RTX 3050</li>
+          <li>storage:512gb DDR5</li>
+          <li>Display:15.6 inches lcd</li>
+        </ul>
+        <button>buy now</button>
+      </div>
+
+      <div class="one">
+        <img
+          src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6455/6455138cv1d.jpg"
+          alt="loq"
+        />
+        <h3>LoQ laptop</h3>
+        <h5>spfication</h5>
+        <ul class="list">
+          <li>proccer:AMD ryzen 5 7000</li>
+          <li>RAM:24gb ram DDR6</li>
+          <li>Gpu:GFOURCE RTX 3050</li>
+          <li>storage:512gb DDR5</li>
+          <li>Display:15.6 inches lcd</li>
+        </ul>
+        <button>buy now</button>
+      </div>
+    </div>
+  </body>
+</html>
